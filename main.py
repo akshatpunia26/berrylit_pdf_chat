@@ -4,7 +4,9 @@ import requests
 url = 'https://api.berri.ai/create_app'
 data = {'user_email': 'akshatpunia04@gmail.com'}
 
-st.title('lmao')
+st.title('made this a joke')
+st.write('upload a pdf and ask a question about it')
+st.info('puniasoft co.')
 uf = st.file_uploader("Choose a PDF file", type="pdf")
 user_input = st.text_input("Ask your query about the document you uploaded?")
 
