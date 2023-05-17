@@ -7,13 +7,11 @@ st.write("This code provides a simple interface for users to upload a PDF file a
 uf = st.file_uploader("Choose a PDF file", type="pdf")
 user_input = st.text_input("Ask your query about the document you uploaded?")
 st.info('Ignore the error message, trying to fix')
-if uf is not None:
+if uf is not None and user_input != "":
     pdf_bytes = uf.read()
     files = {'data_source': ('uploaded.pdf', pdf_bytes)}
     response = requests.post(url, files=files, data=data)
-    a = response.raise_for_status()
-    
-if  a is not None:      
+    response.raise_for_status()     
     api_endpoint = response.json()['api_endpoint']
     user_query = user_input
     final_url = api_endpoint + "&query=" + user_query
@@ -21,8 +19,7 @@ if  a is not None:
     system_response = response.json()["response"]
     st.write(system_response)
 
-
-st.markdown('''
+st.text('''
 ## For running and using the chabot locally:
 
 1. Clone the repository and navigate to the directory in your terminal.
