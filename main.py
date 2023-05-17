@@ -19,7 +19,7 @@ if uf is not None and user_input != "":
     system_response = response.json()["response"]
     st.write(system_response)
 
-st.text('''
+st.markdown('''
 ## For running and using the chabot locally:
 
 1. Clone the repository and navigate to the directory in your terminal.
