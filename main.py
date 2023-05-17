@@ -11,7 +11,9 @@ if uf is not None:
     pdf_bytes = uf.read()
     files = {'data_source': ('uploaded.pdf', pdf_bytes)}
     response = requests.post(url, files=files, data=data)
-    response.raise_for_status()  
+    a = response.raise_for_status()
+    
+if  a is not None:      
     api_endpoint = response.json()['api_endpoint']
     user_query = user_input
     final_url = api_endpoint + "&query=" + user_query
@@ -19,8 +21,9 @@ if uf is not None:
     system_response = response.json()["response"]
     st.write(system_response)
 
-    st.markdown('''
-## TO run this code and use the chabot locally:
+
+st.markdown('''
+## For running and using the chabot locally:
 
 1. Clone the repository and navigate to the directory in your terminal.
     ```sh
