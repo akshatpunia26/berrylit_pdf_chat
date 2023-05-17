@@ -6,7 +6,6 @@ st.title('Berrylit - a Berri.ai and Streamlit Implementation')
 st.write("This code provides a simple interface for users to upload a PDF file and ask a question related to it. The code utilizes Streamlit to create the web interface and the Berri API to process the uploaded file and provide the answer to the user's query.")
 uf = st.file_uploader("Choose a PDF file", type="pdf")
 user_input = st.text_input("Ask your query about the document you uploaded?")
-st.info('Ignore the error message, trying to fix')
 if uf is not None and user_input != "":
     pdf_bytes = uf.read()
     files = {'data_source': ('uploaded.pdf', pdf_bytes)}
@@ -19,11 +18,8 @@ if uf is not None and user_input != "":
     system_response = response.json()["response"]
     st.write(system_response)
 
-
-st.text("")
-
 st.markdown('''
-## For running and using the chabot locally:
+### For running and using the chabot locally:
 
 1. Clone the repository and navigate to the directory in your terminal.
     ```sh
