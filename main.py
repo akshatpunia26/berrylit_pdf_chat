@@ -19,6 +19,9 @@ if uf is not None and user_input != "":
     system_response = response.json()["response"]
     st.write(system_response)
 
+
+st.text("")
+
 st.markdown('''
 ## For running and using the chabot locally:
 
@@ -40,5 +43,5 @@ st.markdown('''
 
 4. The chatbot interface will open in your default browser. You can upload a PDF file by clicking on the "Choose a PDF file" button and ask your query related to the document. 
 
-Note: The code uses the Berri API to process the uploaded PDF file and provide the answer to the user's query. To use this code, you need to have a Berri API key. This code has been tested with Python 3.7 and Streamlit 0.84.0. The code is provided as-is and is free to use and modify.
+Note: The code uses the Berri API to process the uploaded PDF file and provide the answer to the user's query. To use this code, you need to have a Berri API key. This code has been tested with Python 3.9.13 and Streamlit 1.14.0. The code is provided as-is and is free to use and modify.
 ''')
