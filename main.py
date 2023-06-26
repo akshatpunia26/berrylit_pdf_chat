@@ -4,6 +4,7 @@ url = 'https://api.berri.ai/create_app'
 data = {'user_email': 'akshatpunia04@gmail.com'}
 st.title('Berrylit - a Berri.ai and Streamlit Implementation')
 st.write("This code provides a simple interface for users to upload a PDF file and ask a question related to it. The code utilizes Streamlit to create the web interface and the Berri API to process the uploaded file and provide the answer to the user's query.")
+st.markdown('''Made By - [Akshat Punia](http://www.akshatpunia.com)''')
 uf = st.file_uploader("Choose a PDF file", type="pdf")
 user_input = st.text_input("Ask your query about the document you uploaded?")
 if uf is not None and user_input != "":
